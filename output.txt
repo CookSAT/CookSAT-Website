@@ -1,0 +1,27 @@
+<question-one>
+<context>Reading: Information and Ideas: Central Ideas: Hard</context>
+<passage>The concept of "deep time," as articulated by geologist James Hutton in the 18th century, posits a timescale so vast it defies human intuition. Unlike historical time, measured in centuries, or cosmological time, measured in millennia, deep time encompasses billions of years. This framework is not merely a quantitative adjustment but a qualitative shift in perspective. It demands that we reconceptualize our planet not as a static stage for life but as a dynamic entity with a history of profound and continuous transformation. The significance of a fossil, therefore, is not just in the life form it represents, but in its position within an almost unimaginably long narrative of change.</passage>
+<question>Which choice best states the main idea of the passage?</question>
+<answer-choice-one>James Hutton's 18th-century work on deep time was a radical departure from all previous scientific thought.</answer-choice-one>
+<answer-choice-two>The true value of fossils can only be understood within the context of the centuries in which they were discovered.</answer-choice-two>
+<answer-choice-three><correct-answer>Deep time requires a fundamental shift in how humans perceive the history and nature of Earth.</correct-answer></answer-choice-three>
+<answer-choice-four>Human intuition is ill-equipped to handle any measurements of time beyond a single lifetime.</answer-choice-four>
+<explanation-one>Choice A is incorrect. While the passage suggests Hutton's idea was significant, it does not claim it was a radical departure from *all* previous thought, nor is this the passage's main focus.</explanation-one>
+<explanation-two>Choice B is incorrect. This misrepresents the passage. The text states fossils must be understood within the narrative of deep time (billions of years), not the historical time of their discovery (centuries).</explanation-two>
+<explanation-three><correct-explanation>Choice C is the best answer. The passage centers on the idea that deep time is a "qualitative shift in perspective" that forces a reconceptualization of Earth as a "dynamic entity" with a long history of change.</correct-explanation></explanation-three>
+<explanation-four>Choice D is incorrect. Though the passage says deep time "defies human intuition," this is a supporting detail used to illustrate the concept's scale, not the main idea itself.</explanation-four>
+</question-one>
+
+<question-two>
+<context>Reading: Information and Ideas: Central Ideas: Hard</context>
+<passage>Critics of the burgeoning "de-extinction" movement often point to the immense ecological challenges of reintroducing a long-vanished species. However, a more philosophical objection lies in the concept of "authenticity." A resurrected passenger pigeon, engineered from fossil DNA and gestated in a band-tailed pigeon, would not be the product of millions of years of natural selection and cultural evolution. It would be a facsimile, a biological artifact whose behaviors, microbiome, and ecological role are mere approximations. The essential nature of the species—its "passenger-pigeon-ness"—may be irrevocably lost the moment it goes extinct, making any attempt at revival a creation of something new, not a restoration of something old.</passage>
+<question>The central claim of the passage is that de-extinction</question>
+<answer-choice-one>is a practical impossibility due to the current state of genetic engineering technology.</answer-choice-one>
+<answer-choice-two>faces its most significant hurdles from ecologists concerned about habitat disruption.</answer-choice-two>
+<answer-choice-three>may fail to achieve its goal on principle, regardless of its technical success.</answer-choice-three>
+<answer-choice-four><correct-answer>is a creation of something new, not a restoration of something old.</correct-answer></answer-choice-four>
+<explanation-one>Choice A is incorrect. The passage explicitly sets aside practical "ecological challenges" to focus on a "more philosophical objection," so technical impossibility is not the central claim.</explanation-one>
+<explanation-two>Choice B is incorrect. While ecological concerns are mentioned, the passage introduces them only to contrast them with the main, philosophical argument about authenticity.</explanation-two>
+<explanation-three>Choice C is incorrect. This is close but too vague. It describes the problem without capturing the passage's specific conclusion about what de-extinction actually creates.</explanation-three>
+<explanation-four><correct-explanation>Choice D is the best answer. This is the definitive conclusion of the passage's argument. The text builds a case that the "essential nature" of an extinct species is lost forever, and therefore any revived version would be a new creation, an "artifact," rather than a true restoration.</correct-explanation></explanation-four>
+</question-two>

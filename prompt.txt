@@ -1,0 +1,3 @@
+<purpose>
+    Please write python code to print hello world.
+</purpose>

@@ -115,27 +115,13 @@ def main():
     print("✅ Got response from Deepseek")
     print(f"📄 Response length: {len(response)} characters")
     
-    # Parse the response
-    print("🔍 Parsing Deepseek output...")
-    questions = parse_deepseek_output(response)
+    # Write response to output.txt
+    print("💾 Writing response to output.txt...")
+    with open('output.txt', 'w', encoding='utf-8') as file:
+        file.write(response)
     
-    if questions:
-        print(f"✅ Parsed {len(questions)} questions")
-        
-        # Save to JSON
-        save_to_json(questions)
-        
-        # Print summary
-        print("\n📊 Summary:")
-        for i, q in enumerate(questions, 1):
-            print(f"Question {i}: {q['question'][:60]}...")
-            print(f"  Correct Answer: {q['correct_answer']}")
-            print(f"  Context: {q['context'][:40]}...")
-            print()
-    else:
-        print("❌ No questions found in the response")
-        print("Raw response:")
-        print(response[:500] + "..." if len(response) > 500 else response)
+    print("✅ Response saved to output.txt")
+    print(f"📄 Response preview: {response[:200]}...")
 
 if __name__ == "__main__":
     main()

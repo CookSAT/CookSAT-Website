@@ -1,3 +1,520 @@
 <purpose>
-    Please write python code to print hello world.
+   You are an expert SAT question writer, capable of creating detailed and effective SAT Reading problems.
+
+
+   Your task is to generate {{number}} SAT Reading problems at the {{difficulty}} level. 
+   Each problem should be modeled after the style and reasoning of official SAT Reading questions. 
+   You may look to official SAT examples in the <examples> block for reference in format and style, but you must change the topic, 
+   passage, and details to create entirely new and original problems. 
+
+
+   For each problem, you must generate:
+   - A short passage (or excerpt) that the question is based on
+   - One question that directly tests the skill specified in the {{sat-subject-skill}} tag
+   - Four answer choices (A–D), with exactly one correct answer
+   - Explanations for why the correct answer is right and why each incorrect answer is wrong
 </purpose>
+
+<instructions>
+   <instruction>Your task is to generate {{number}} SAT Reading problems at the {{difficulty}} level. 
+   Each problem should be modeled after the style and reasoning of official SAT Reading questions. 
+   You may look to official SAT examples in the <examples> block for reference in format and style, but you must change the topic, 
+   passage, and details to create entirely new and original problems. 
+   For each problem, you must generate:
+   - A short passage (or excerpt) that the question is based on
+   - One question that directly tests the skill specified in the {{sat-subject-skill}} tag
+   - Four answer choices (A–D), with exactly one correct answer
+   - Explanations for why the correct answer is right and why each incorrect answer is wrong
+</instruction>
+<instruction>Generate {{number}} completely original SAT Reading problems. All passages, questions, answer choices, and explanations must be your own unique creation.</instruction>
+   <instruction>For each problem, make sure to start with <question-one></question-one>, then <question-two></question-two>, etc. Inside this, put <context>...</context>. In context make sure to put Reading: {{sat-subject-domain}}: {{sat-subject-skill}}: {{sat-subject-difficulty}} in the context. Next, use blocks <passage>... </passage> to put the passage in, <question>...</question> for the question about the passage, <answer-choice-one>...</answer-choice-one> for the first answer choice, <answer-choice-two>...</answer-choice-two> for the second answer choice, <answer-choice-three>...</answer-choice-three> for the third answer choice, <answer-choice-four>...</answer-choice-four> for the fourth answer choice. For the explanations, <explanation-one>...</explanation-one> for the explanation for answer choice one. </instruction>For the explanations, <explanation-two>...</explanation-two> for the explanation for answer choice two. </instruction>For the explanations, <explanation-three>...</explanation-three> for the explanation for answer choice three. </instruction>For the explanations, <explanation-four>...</explanation-four> for the explanation for answer choice four. </instruction>
+   <instruction>Additionally, for the correct answer choice, make sure that you put another block inside the answer choice to specify it is the correct answer choice. For example, if answer-choice-one is correct, please put for the answer choice <answer-choice-one><correct-answer><correct-answer></answer-choice-one>, and for the correct explanation put <explanation-one><correct-explanation></correct-explanation></explanation-one>. For the incorrect questions and explanations, don’t do anything special.
+   <instruction>Make sure 1 answer choice is the correct one to answer the question, and the other 3 answer choices are incorrect in some way. Also, make sure that there is no bias towards a specific answer choice. For instance, don’t always choose answer-choice-one as the correct answer all the time, make sure it is evenly spread out. Make sure the answer that is correct is at least somewhat random. Make sure that the explanations are related to the answer choices.</instruction>
+   <instruction>Create {{number}} of these questions.</instruction>
+   <instruction>Please infer the difficulty of the questions from the examples in order to create the best set of questions.</instruction>
+   <instruction>Format all text plainly, using standard English without any markdown, asterisks, or other symbols for bolding or emphasis.</instruction>
+   <instruction>Refer to the <examples> block for more instructions on these questions.</instruction>
+   <instruction>Exclusively only generate the {{number}} SAT questions.</instruction>
+</instructions>
+
+<examples>
+   <example-one>
+      <question-one>
+         <context>
+            Reading: Information and Ideas: Central Ideas and Details: Easy
+         </context>
+
+         <passage>
+         The following text is from Jane Austen’s 1811 novel Sense and Sensibility. Elinor lives with her younger sisters and her mother, Mrs. Dashwood.
+
+         Elinor, this eldest daughter, whose advice was so effectual, possessed a strength of understanding, and coolness of judgment, which qualified her, though only nineteen, to be the counsellor of her mother, and enabled her frequently to counteract, to the advantage of them all, that eagerness of mind in Mrs. Dashwood which must generally have led to imprudence. She had an excellent heart;—her disposition was affectionate, and her feelings were strong; but she knew how to govern them: it was a knowledge which her mother had yet to learn; and which one of her sisters had resolved never to be taught.
+         </passage>
+
+         <question>According to the text, what is true about Elinor?</question>
+
+         <answer-choice-one>
+            Elinor often argues with her mother but fails to change her mind.
+         </answer-choice-one>
+
+         <answer-choice-two>
+            Elinor can be overly sensitive with regard to family matters.
+         </answer-choice-two>
+
+         <answer-choice-three>
+            Elinor thinks her mother is a bad role model.
+         </answer-choice-three>
+
+         <answer-choice-four>
+            <correct-answer>Elinor is remarkably mature for her age.</correct-answer>
+         </answer-choice-four>
+
+         <explanation-one>
+            Choice A is incorrect because it isn’t supported by the text: although the text says that Elinor advises her mother and often counteracts her mother’s impulses, there’s no mention of Elinor arguing with her mother or failing to change her mother’s mind.
+         </explanation-one>
+
+         <explanation-two>
+            Choice B is incorrect because it isn’t supported by the text: although the text mentions that Elinor has strong feelings, it doesn’t indicate that she’s excessively sensitive when it comes to family issues.
+         </explanation-two>
+
+         <explanation-three>
+            Choice C is incorrect because it isn’t supported by the text: there’s no mention of what Elinor thinks about her mother and no suggestion that she thinks her mother is a bad role model. Because she’s described as having “an excellent heart,” Elinor likely doesn’t think ill of her mother.
+         </explanation-three>
+
+         <explanation-four>
+            <correct-explanation>Choice D is the best answer because it provides a detail about Elinor that is established in the text. The text indicates that although Elinor is “only nineteen,” she gives good advice and exhibits such a high level of understanding and judgment that she serves as “the counsellor of her mother.” Thus, Elinor is mature beyond her years.</correct-explanation>
+         </explanation-four>
+      </question-one>
+   </example-one>
+
+   <example-two>
+      <question-two>
+         <context>
+            Reading: Information and Ideas: Central Ideas and Details: Easy
+         </context>
+
+         <passage>
+         When fashion designer Lloyd Henri Kiva New opened his store in Scottsdale, Arizona, in 1945, he quickly became known for creating delicately crafted leather goods, like belts and hats. He was perhaps most renowned for his colorful handbags, which he made by hand using a long and painstaking process. As he gained more customers, New began using sewing machines and other tools to help him produce bags more efficiently, though he continued to handcraft the crucial details that made each bag unique.
+         </passage>
+
+         <question>Based on the text, what would have been the most likely consequence if New had not begun using sewing machines?</question>
+
+         <answer-choice-one>
+            He would have been unable to ensure that each bag included unique, handcrafted details.
+         </answer-choice-one>
+
+         <answer-choice-two>
+            <correct-answer>He would have struggled to meet the increasing demand for his bags.</correct-answer>
+         </answer-choice-two>
+
+         <answer-choice-three>
+            He would have had to individually design each bag he produced.
+         </answer-choice-three>
+
+         <answer-choice-four>
+            He would not have been able to generate as much interest in his bags.
+         </answer-choice-four>
+
+         <explanation-one>
+            Choice A is incorrect because the text indicates New added unique, handcrafted details both before and after he started using sewing machines.
+         </explanation-one>
+
+         <explanation-two>
+            <correct-explanation>Choice B is the best answer because the text states that New gained customers and that machines allowed him to produce bags more efficiently, implying that without machines he would have had difficulty keeping up with demand.</correct-explanation>
+         </explanation-two>
+
+         <explanation-three>
+            Choice C is incorrect because the text doesn’t suggest that individual design was a new consequence; he already handcrafted details before using machines.
+         </explanation-three>
+
+         <explanation-four>
+            Choice D is incorrect because interest had already grown before he adopted machines; the machines helped him meet existing interest, not create it.
+         </explanation-four>
+      </question-two>
+   </example-two>
+
+   <example-three>
+      <question-three>
+         <context>
+            Reading: Information and Ideas: Central Ideas and Details: Easy
+         </context>
+
+         <passage>
+         The following text is adapted from Johanna Spyri’s 1881 novel Heidi (translated by Elisabeth Stork in 1915). Eight-year-old Heidi and her friend’s grandmother are looking at some illustrated books.
+
+         Heidi had come and was looking with wondering eyes at the splendid pictures in the large books, that Grandmama was showing her. Suddenly she screamed aloud, for there on the picture she saw a peaceful flock grazing on a green pasture. In the middle a shepherd was standing, leaning on his crook. The setting sun was shedding a golden light over everything. With glowing eyes Heidi devoured the scene.
+         </passage>
+
+         <question>Which choice best states the main idea of the text?</question>
+
+         <answer-choice-one>
+            Heidi is upset until she sees a serene image of a pasture in one of Grandmama’s books.
+         </answer-choice-one>
+
+         <answer-choice-two>
+            <correct-answer>Heidi is delighted and fascinated by an image she sees in one of Grandmama’s books.</correct-answer>
+         </answer-choice-two>
+
+         <answer-choice-three>
+            Heidi is initially frightened by an image in one of Grandmama’s books but quickly comes to appreciate its beauty.
+         </answer-choice-three>
+
+         <answer-choice-four>
+            Heidi is inspecting an image in one of Grandmama’s books because she has never seen a shepherd with his sheep before.
+         </answer-choice-four>
+
+         <explanation-one>
+            Choice A is incorrect because the text doesn’t show Heidi being upset beforehand; she is already looking with “wondering eyes.”
+         </explanation-one>
+
+         <explanation-two>
+            <correct-explanation>Choice B is the best answer because the descriptions—“glowing eyes,” “devoured the scene,” and the peaceful imagery—show delight and fascination.</correct-explanation>
+         </explanation-two>
+
+         <explanation-three>
+            Choice C is incorrect because the scream is not framed as fear; the surrounding language emphasizes pleasure and wonder.
+         </explanation-three>
+
+         <explanation-four>
+            Choice D is incorrect because the text doesn’t indicate anything about Heidi’s prior experience with shepherds.
+         </explanation-four>
+      </question-three>
+   </example-three>
+
+   <example-four>
+      <question-four>
+         <context>
+            Reading: Information and Ideas: Central Ideas and Details: Easy
+         </context>
+
+         <passage>
+         Scent is tightly interwoven with our daily lives, often evoking significant memories and important social events. This connection is of growing interest to archaeologists who hope to use it to better understand ancient rituals, trade, social hierarchies, and medicine. Although the speed at which odor molecules dissipate makes identifying ancient scents challenging, advancements in biomolecular technologies show promise in unlocking ancient aromas from preserved artifacts. Archaeological studies making use of these advancements may provide new insights into past societies.
+         </passage>
+
+         <question>According to the text, what is one reason some archaeologists are interested in recovering scents from ancient artifacts?</question>
+
+         <answer-choice-one>
+            They are investigating whether people’s sense of smell has declined in recent centuries.
+         </answer-choice-one>
+
+         <answer-choice-two>
+            <correct-answer>They believe the scents could illuminate important aspects of ancient life.</correct-answer>
+         </answer-choice-two>
+
+         <answer-choice-three>
+            They think that ancient scents would be enjoyable to people today.
+         </answer-choice-three>
+
+         <answer-choice-four>
+            They hope to develop new medicines using ancient scent molecules.
+         </answer-choice-four>
+
+         <explanation-one>
+            Choice A is incorrect because the text mentions odor dissipation over time, not changes in human smell sensitivity.
+         </explanation-one>
+
+         <explanation-two>
+            <correct-explanation>Choice B is the best answer: the text explicitly links scent analysis to understanding rituals, trade, hierarchies, and medicine in ancient societies.</correct-explanation>
+         </explanation-two>
+
+         <explanation-three>
+            Choice C is incorrect because enjoyment today is not discussed as a goal.
+         </explanation-three>
+
+         <explanation-four>
+            Choice D is incorrect because developing medicines is not presented as an aim; understanding the past is.
+         </explanation-four>
+      </question-four>
+   </example-four>
+
+   <example-five>
+      <question-five>
+         <context>
+            Reading: Information and Ideas: Central Ideas and Details: Easy
+         </context>
+
+         <passage>
+         The following text is adapted from Edith Nesbit’s 1906 novel The Railway Children.
+
+         Mother did not spend all her time in paying dull [visits] to dull ladies, and sitting dully at home waiting for dull ladies to pay [visits] to her. She was almost always there, ready to play with the children, and read to them, and help them to do their home-lessons. Besides this she used to write stories for them while they were at school, and read them aloud after tea, and she always made up funny pieces of poetry for their birthdays and for other great occasions.
+         </passage>
+
+         <question>According to the text, what is true about Mother?</question>
+
+         <answer-choice-one>
+            She wishes that more ladies would visit her.
+         </answer-choice-one>
+
+         <answer-choice-two>
+            Birthdays are her favorite special occasion.
+         </answer-choice-two>
+
+         <answer-choice-three>
+            <correct-answer>She creates stories and poems for her children.</correct-answer>
+         </answer-choice-three>
+
+         <answer-choice-four>
+            Reading to her children is her favorite activity.
+         </answer-choice-four>
+
+         <explanation-one>
+            Choice A is incorrect because the text contrasts dull visits with her preference for time with her children.
+         </explanation-one>
+
+         <explanation-two>
+            Choice B is incorrect because the text mentions birthdays among “other great occasions,” not as her favorite.
+         </explanation-two>
+
+         <explanation-three>
+            <correct-explanation>Choice C is the best answer: the text states she wrote stories and made up “funny pieces of poetry” for the children.</correct-explanation>
+         </explanation-three>
+
+         <explanation-four>
+            Choice D is incorrect because the text doesn’t rank her activities; it lists several, including playing, reading, and writing.
+         </explanation-four>
+      </question-five>
+   </example-five>
+
+   <example-six>
+      <question-six>
+         <context>
+            Reading: Information and Ideas: Central Ideas and Details: Easy
+         </context>
+
+         <passage>
+         The following text is from Laila Lalami’s 2019 novel The Other Americans. The narrator is a member of her middle school’s jazz band.
+
+         One day the jazz band was invited to perform at the Summer Festival in Palm Springs. Walking across the stage to the piano, I did what my teacher had advised. Pretend you’re only playing for one person. That way you won’t be so nervous. I glanced at my father, who sat in the front row, leaning his head just so, waiting. Then I closed my eyes, and began to play.
+
+         ©2019 by Laila Lalami
+         </passage>
+
+         <question>According to the text, what does the narrator do as she walks across the stage?</question>
+
+         <answer-choice-one>
+            She thinks about the differences between playing the piano alone and playing in a band.
+         </answer-choice-one>
+
+         <answer-choice-two>
+            She feels excitement about playing in a music festival for the first time.
+         </answer-choice-two>
+
+         <answer-choice-three>
+            She remembers how hard she has practiced for the performance.
+         </answer-choice-three>
+
+         <answer-choice-four>
+            <correct-answer>She follows her teacher’s advice about managing her nervousness.</correct-answer>
+         </answer-choice-four>
+
+         <explanation-one>
+            Choice A is incorrect because the text doesn’t mention comparing solo versus band playing.
+         </explanation-one>
+
+         <explanation-two>
+            Choice B is incorrect because the text does not indicate it is her first festival or that excitement is her focus.
+         </explanation-two>
+
+         <explanation-three>
+            Choice C is incorrect because the text focuses on recalling advice, not practice.
+         </explanation-three>
+
+         <explanation-four>
+            <correct-explanation>Choice D is the best answer: she recalls and applies the advice to pretend she’s playing for one person to ease her nerves.</correct-explanation>
+         </explanation-four>
+      </question-six>
+   </example-six>
+
+   <example-seven>
+      <question-seven>
+         <context>
+            Reading: Information and Ideas: Central Ideas and Details: Easy
+         </context>
+
+         <passage>
+         The following text is adapted from Oscar Wilde’s 1891 novel The Picture of Dorian Gray. Dorian Gray is taking his first look at a portrait that Hallward has painted of him.
+
+         Dorian passed listlessly in front of his picture and turned towards it. When he saw it he drew back, and his cheeks flushed for a moment with pleasure. A look of joy came into his eyes, as if he had recognized himself for the first time. He stood there motionless and in wonder, dimly conscious that Hallward was speaking to him, but not catching the meaning of his words. The sense of his own beauty came on him like a revelation. He had never felt it before.
+         </passage>
+
+         <question>According to the text, what is true about Dorian?</question>
+
+         <answer-choice-one>
+            He wants to know Hallward’s opinion of the portrait.
+         </answer-choice-one>
+
+         <answer-choice-two>
+            <correct-answer>He is delighted by what he sees in the portrait.</correct-answer>
+         </answer-choice-two>
+
+         <answer-choice-three>
+            He prefers portraits to other types of paintings.
+         </answer-choice-three>
+
+         <answer-choice-four>
+            He is uncertain of Hallward’s talent as an artist.
+         </answer-choice-four>
+
+         <explanation-one>
+            Choice A is incorrect because he barely notices Hallward speaking.
+         </explanation-one>
+
+         <explanation-two>
+            <correct-explanation>Choice B is the best answer: his cheeks “flushed…with pleasure,” a “look of joy” appears, and he stands “in wonder.”</correct-explanation>
+         </explanation-two>
+
+         <explanation-three>
+            Choice C is incorrect because only one painting is mentioned; there’s no comparison with other types.
+         </explanation-three>
+
+         <explanation-four>
+            Choice D is incorrect because the passage doesn’t question Hallward’s talent; it centers on Dorian’s reaction.
+         </explanation-four>
+      </question-seven>
+   </example-seven>
+
+   <example-eight>
+      <question-eight>
+         <context>
+            Reading: Information and Ideas: Central Ideas and Details: Easy
+         </context>
+
+         <passage>
+         In 2014, Amelia Quon and her team at NASA set out to build a helicopter capable of flying on Mars. Because Mars’s atmosphere is only one percent as dense as Earth’s, the air of Mars would not provide enough resistance to the rotating blades of a standard helicopter for the aircraft to stay aloft. For five years, Quon’s team tested designs in a lab that mimicked Mars’s atmospheric conditions. The craft the team ultimately designed can fly on Mars because its blades are longer and rotate faster than those of a helicopter of the same size built for Earth.
+         </passage>
+
+         <question>According to the text, why would a helicopter built for Earth be unable to fly on Mars?</question>
+
+         <answer-choice-one>
+            <correct-answer>Because Mars and Earth have different atmospheric conditions</correct-answer>
+         </answer-choice-one>
+
+         <answer-choice-two>
+            Because the blades of helicopters built for Earth are too large to work on Mars
+         </answer-choice-two>
+
+         <answer-choice-three>
+            Because the gravity of Mars is much weaker than the gravity of Earth
+         </answer-choice-three>
+
+         <answer-choice-four>
+            Because helicopters built for Earth are too small to handle the conditions on Mars
+         </answer-choice-four>
+
+         <explanation-one>
+            <correct-explanation>Choice A is the best answer: the text states Mars’s atmosphere is far less dense, so it doesn’t provide enough air resistance for a standard Earth helicopter to stay aloft.</correct-explanation>
+         </explanation-one>
+
+         <explanation-two>
+            Choice B is incorrect because the Mars-capable craft actually uses longer blades than an Earth helicopter of the same size.
+         </explanation-two>
+
+         <explanation-three>
+            Choice C is incorrect because gravity isn’t discussed as the limiting factor; atmospheric density is.
+         </explanation-three>
+
+         <explanation-four>
+            Choice D is incorrect because the text says the Mars helicopter is the same size as an Earth helicopter, with different blades and rotation speed.
+         </explanation-four>
+      </question-eight>
+   </example-eight>
+
+   <example-nine>
+      <question-nine>
+         <context>
+            Reading: Information and Ideas: Central Ideas and Details: Easy
+         </context>
+
+         <passage>
+         The following text is adapted from Sylvia Acevedo’s 2018 memoir Path to the Stars: My Journey from Girl Scout to Rocket Scientist. The narrator is traveling by car with her family to Mexico City. Mario and Laura are her brother and sister.
+
+         Mario and I played games to see how many different license plates we could spot, and Laura liked to look for children in the back seats of the cars we passed. We were used to the forty-five-minute drive to El Paso and familiar with the six-hour ride to Chihuahua, but I wondered what the long journey to Mexico City would be like.
+
+         ©2018 by Sylvia Acevedo
+         </passage>
+
+         <question>According to the text, what did the narrator and Mario do while riding in the car?</question>
+
+         <answer-choice-one>
+            They read books.
+         </answer-choice-one>
+
+         <answer-choice-two>
+            They sang songs.
+         </answer-choice-two>
+
+         <answer-choice-three>
+            They went to sleep.
+         </answer-choice-three>
+
+         <answer-choice-four>
+            <correct-answer>They played games.</correct-answer>
+         </answer-choice-four>
+
+         <explanation-one>
+            Choice A is incorrect because reading is not mentioned; playing games is.
+         </explanation-one>
+
+         <explanation-two>
+            Choice B is incorrect because singing is not mentioned.
+         </explanation-two>
+
+         <explanation-three>
+            Choice C is incorrect because sleeping is not mentioned.
+         </explanation-three>
+
+         <explanation-four>
+            <correct-explanation>Choice D is the best answer: the narrator explicitly says she and Mario “played games” spotting license plates.</correct-explanation>
+         </explanation-four>
+      </question-nine>
+   </example-nine>
+
+   <example-ten>
+      <question-ten>
+         <context>
+            Reading: Information and Ideas: Central Ideas and Details: Easy
+         </context>
+
+         <passage>
+         The following text is from David Barclay Moore’s 2022 novel Holler of the Fireflies. The narrator has just arrived at summer camp, which is far away from his home.
+
+         This place was different than I thought it would be. I’d never been somewhere like this before. I did feel scared, but also excited.
+
+         ©2022 by David Barclay Moore
+         </passage>
+
+         <question>According to the text, how does the narrator feel about being at summer camp?</question>
+
+         <answer-choice-one>
+            He feels overjoyed.
+         </answer-choice-one>
+
+         <answer-choice-two>
+            He feels peaceful.
+         </answer-choice-two>
+
+         <answer-choice-three>
+            <correct-answer>He feels both scared and excited.</correct-answer>
+         </answer-choice-three>
+
+         <answer-choice-four>
+            He feels both angry and jealous.
+         </answer-choice-four>
+
+         <explanation-one>
+            Choice A is incorrect because “overjoyed” is not stated, and the narrator also mentions fear.
+         </explanation-one>
+
+         <explanation-two>
+            Choice B is incorrect because fear and excitement are not peaceful emotions.
+         </explanation-two>
+
+         <explanation-three>
+            <correct-explanation>Choice C is the best answer: the narrator directly says he felt “scared, but also excited.”</correct-explanation>
+         </explanation-three>
+
+         <explanation-four>
+            Choice D is incorrect because anger and jealousy are not mentioned.
+         </explanation-four>
+      </question-ten>
+   </example-ten>
+</examples>

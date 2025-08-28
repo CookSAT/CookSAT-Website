@@ -3,22 +3,71 @@ import json
 import re
 from datetime import datetime
 
+# Template variables - customize these as needed
+TEMPLATE_VARIABLES = {
+    "number": 10,  # Number of questions to generate
+    "difficulty": "Easy",  # Easy, Medium, Hard
+    "sat-subject-domain": "Information and Ideas",  # Reading, Writing, Math
+    "sat-subject-skill": "Central Ideas and Details",  # Information and Ideas, Craft and Structure, etc.
+}
+
+# Auto-set sat-subject-difficulty to match difficulty
+TEMPLATE_VARIABLES["sat-subject-difficulty"] = TEMPLATE_VARIABLES["difficulty"]
+
 def read_prompt():
-    """Read prompt from file"""
-    with open('prompt.txt', 'r') as file:
-        return file.read().strip()
+    """Read prompt from file and replace template variables"""
+    try:
+        with open('prompt.txt', 'r') as file:
+            prompt_template = file.read().strip()
+        
+        # Replace all template variables
+        prompt = prompt_template
+        for tag, value in TEMPLATE_VARIABLES.items():
+            prompt = prompt.replace(f"{{{{{tag}}}}}", str(value))
+        
+        print(f"📝 Template variables applied:")
+        for tag, value in TEMPLATE_VARIABLES.items():
+            print(f"   {{{{{tag}}}}} → {value}")
+        print()
+        
+        return prompt
+    except FileNotFoundError:
+        print("❌ Error: prompt.txt not found!")
+        print("   Please create a prompt.txt file with your template")
+        return None
 
 def call_deepseek_api(prompt):
     """Call Deepseek API and return response"""
     try:
         url = "https://api.deepseek.com/chat/completions"
         headers = {"Authorization": "Bearer sk-1c1c6bbcfde04f16a8deaefe6023b1be", "Content-Type": "application/json"}
-        data = {"model": "deepseek-chat", "messages": [{"role": "user", "content": prompt}]}
+        data = {
+            "model": "deepseek-chat", 
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 8000,  # Increased output token limit
+            "temperature": 0.7,  # Control creativity
+            "top_p": 0.9,  # Control response diversity
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.0
+        }
         
-        response = requests.post(url, headers=headers, json=data, timeout=30)
+        print(f"📊 API Request Details:")
+        print(f"   Input tokens: ~{len(prompt.split())} words")
+        print(f"   Max output tokens: 8000")
+        print(f"   Temperature: 0.7")
+        
+        response = requests.post(url, headers=headers, json=data, timeout=60)  # Increased timeout
         
         if response.status_code == 200:
-            return response.json()['choices'][0]['message']['content']
+            result = response.json()
+            content = result['choices'][0]['message']['content']
+            usage = result.get('usage', {})
+            
+            print(f"✅ API Response:")
+            print(f"   Output tokens used: {usage.get('completion_tokens', 'Unknown')}")
+            print(f"   Total tokens used: {usage.get('total_tokens', 'Unknown')}")
+            
+            return content
         else:
             return f"Error: {response.status_code} - {response.text}"
     except Exception as e:
@@ -100,9 +149,12 @@ def save_to_json(questions, filename="satQuestions.json"):
     print(f"✅ Saved {len(questions)} questions to {filename}")
 
 def main():
-    # Read prompt
+    # Read and process prompt with template variables
     prompt = read_prompt()
-    print(f"📝 Prompt: {prompt[:100]}...")
+    if not prompt:
+        return
+    
+    print(f"📝 Final prompt: {prompt[:100]}...")
     
     # Call Deepseek API
     print("🤖 Calling Deepseek API...")
@@ -121,7 +173,6 @@ def main():
         file.write(response)
     
     print("✅ Response saved to output.txt")
-    print(f"📄 Response preview: {response[:200]}...")
 
 if __name__ == "__main__":
     main()
